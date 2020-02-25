@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const dotEnv = require("dotenv")
 const fs = require("fs")
 const path = require("path")
@@ -5,13 +7,13 @@ const inquirer = require("inquirer")
 
 dotEnv.config()
 
-path.resolve = path.resolve.bind(null, process.cwd())
+const resolve = it => path.resolve(process.cwd(), it)
 
-const envPath = path.resolve("./.env")
-const envTemplatePath = path.resolve("./.env.template")
+const envPath = resolve(".env")
+const envTemplatePath = resolve(".env.template")
 const isCI = Object.keys(process.env).some(it => it.startsWith("CI"))
 
-;(async () => {
+module.exports = (async () => {
   const currentEnvFile = readTextFile(envPath)
   const envTemplate = dotEnv.parse(readTextFile(envTemplatePath))
   const currentEnv = dotEnv.parse(currentEnvFile)
