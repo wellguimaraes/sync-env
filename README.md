@@ -1,5 +1,10 @@
 # Sync-env
-Easily sync environment variables based on a template file. 
+A CLI tool to easily define environment variables based on a template file.
 
 - When running **locally** it will ask for the values of missing variables
 - When running **on CI**, it will break the process if some variable is missing
+
+## Use it
+```
+npx sync-env
+```
