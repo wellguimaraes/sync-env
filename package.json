@@ -13,9 +13,8 @@
   "author": "wellguimaraes@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "fs": "^0.0.1-security",
-    "inquirer": "^7.0.4",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.2.0",
     "is-ci": "^3.0.0"
   },
   "devDependencies": {
